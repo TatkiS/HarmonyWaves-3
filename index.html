@@ -1,81 +1,113 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Гармонія Хвиль</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      background: url('background-image.jpg') no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Гармонія Хвиль</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background: url('background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
 
-    .content {
-      position: absolute;
-      top: 20px;
-      left: 0;
-      right: 0;
-      bottom: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-      z-index: 1;
-      color: white;
-      padding: 10px;
-      overflow: auto;
-    }
+        .content {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            z-index: 1;
+            color: white;
+            padding: 10px;
+            overflow: auto;
+        }
 
-    .station-title {
-      font-size: 1.8em;
-      margin-bottom: 10px;
-      text-align: center;
-      animation: colorChange 10s infinite;
-    }
+        .station-title {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            text-align: center;
+            animation: colorChange 10s infinite;
+        }
 
-    @keyframes colorChange {
-      0% { color: #ff2d55; }
-      50% { color: #ffffff; }
-      100% { color: #4cd964; }
-    }
+        audio {
+            all: unset;
+            width: 300px;
+            height: 50px;
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
+            display: block;
+            max-width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            border: 1px solid #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
 
-    @media screen and (max-width: 768px) {
-      .station-title {
-        font-size: 1.5em;
-      }
-      .player {
-        width: 90%;
-      }
-    }
-  </style>
+        @keyframes colorChange {
+            0% { color: #ff2d55; }
+            50% { color: #ffffff; }
+            100% { color: #4cd964; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .station-title {
+                font-size: 1.5em;
+            }
+            audio {
+                width: 90%;
+                height: auto;
+                padding: 5px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="content">
-    <!-- Хвиля Перемоги Section -->
-    <div class="station-section">
-      <div class="station-title">Хвиля Перемоги</div>
-      <iframe id="hvylia-player" class="player" src="https://cdn2.cloudrad.io/hvilyaperemogi/dzgtbmoedabuv/p1-popup.html"></iframe>
-    </div>
+    <div class="content">
+        <!-- Хвиля Перемоги Section -->
+        <div class="station-section">
+            <div class="station-title">Хвиля Перемоги</div>
+            <audio controls>
+                <source src="https://stream-150.zeno.fm/dzgtbmoedabuv?zs=Mjzswr5ST9uXE64ZyN1l6w" type="audio/mpeg">
+                Ваш браузер не підтримує аудіо елемент.
+            </audio>
+        </div>
 
-    <!-- PulseRock Section -->
-    <div class="station-section">
-      <div class="station-title">PulseRock</div>
-      <iframe id="pulserock-player" class="player" src="https://cdn2.cloudrad.io/pulserock/sowvppvyth6uv/p1-popup.html"></iframe>
-    </div>
+        <!-- PulseRock Section -->
+        <div class="station-section">
+            <div class="station-title">PulseRock</div>
+            <audio controls>
+                <source src="https://stream-149.zeno.fm/sowvppvyth6uv?zs=oH2jjzd9SSmjdTfD4LMZfg" type="audio/mpeg">
+                Ваш браузер не підтримує аудіо елемент.
+            </audio>
+        </div>
 
-    <!-- PulseBIT Radio Section -->
-    <div class="station-section">
-      <div class="station-title">PulseBIT Radio</div>
-    <iframe id="pulsebit-player" class="player" src="https://cdn2.cloudrad.io/pulsebitradio/n1ao5tatuaqvv/p1-popup.html"></iframe>
-	  	  
+        <!-- PulseBIT Radio Section -->
+        <div class="station-section">
+            <div class="station-title">PulseBIT Radio</div>
+            <audio controls>
+                <source src="https://stream-150.zeno.fm/n1ao5tatuaqvv?zs=T5G65pOyTraWIwtvncvDuQ" type="audio/mpeg">
+                Ваш браузер не підтримує аудіо елемент.
+            </audio>
+        </div>
+
+        <!-- Четвертий Плеєр Section -->
+        <div class="station-section">
+            <div class="station-title">EfirHarmonii</div>
+            <audio controls>
+                <source src="https://stream.zeno.fm/708nkxeeep9uv" type="audio/mpeg">
+                Ваш браузер не підтримує аудіо елемент.
+            </audio>
+        </div>
     </div>
-  </div>
 </body>
 </html>
