@@ -2,8 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Гармонія Хвиль</title>
     <style>
         body, html {
@@ -13,97 +12,84 @@
             overflow: hidden;
             background: url('background-image.jpg') no-repeat center center fixed;
             background-size: cover;
+            font-family: Arial, sans-serif;
         }
 
-        .content {
-            position: absolute;
-            top: 20px;
-            left: 0;
-            right: 0;
-            bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-            color: white;
-            padding: 10px;
-            overflow: auto;
+        .audio-player-container {
             text-align: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.5); /* Півпрозорий фон */
+            margin: 10px auto;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .station-title {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px #000000;
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 5px;
         }
 
         audio {
-            width: 90%; /* Адаптивна ширина, зменшується на мобільних пристроях */
-            min-width: 260px; /* Мінімальна ширина, щоб контроли не стали надто маленькими */
-            margin: 0 auto 20px; /* Центрування та відступи знизу */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            border-radius: 5px;
-            overflow: hidden; /* Прибираємо залишкові частини поза межами */
+            width: 100%; /* Повна ширина аудіоплеєра */
         }
 
-        @keyframes colorChange {
-            0% { color: #ff2d55; }
-            50% { color: #ffffff; }
-            100% { color: #4cd964; }
+        button {
+            padding: 5px 10px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
         }
 
         @media screen and (max-width: 768px) {
-            .station-title {
-                font-size: 1.5em;
-            }
-            .content {
-                padding: 5px;
-            }
-            audio {
-                width: 95%; /* Ширший на мобільних пристроях */
-                min-width: 0; /* Видалення мінімальної ширини для мобільних пристроїв */
+            .audio-player-container {
+                width: 90%; /* Більша ширина для мобільних пристроїв */
             }
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <!-- Хвиля Перемоги Section -->
-        <div class="station-section">
-            <div class="station-title">Хвиля Перемоги</div>
-            <audio controls>
-                <source src="https://stream-150.zeno.fm/dzgtbmoedabuv?zs=Mjzswr5ST9uXE64ZyN1l6w" type="audio/mpeg">
-                Ваш браузер не підтримує аудіо елемент.
-            </audio>
-        </div>
+    <div class="audio-player-container">
+        <div class="station-title">Хвиля Перемоги</div>
+        <audio id="audio1" controls>
+            <source src="https://stream-150.zeno.fm/dzgtbmoedabuv?zs=Mjzswr5ST9uXE64ZyN1l6w" type="audio/mpeg">
+            Ваш браузер не підтримує аудіо елемент.
+        </audio>
+    </div>
 
-        <!-- PulseRock Section -->
-        <div class="station-section">
-            <div class="station-title">PulseRock</div>
-            <audio controls>
-                <source src="https://stream-149.zeno.fm/sowvppvyth6uv?zs=oH2jjzd9SSmjdTfD4LMZfg" type="audio/mpeg">
-                Ваш браузер не підтримує аудіо елемент.
-            </audio>
-        </div>
+    <div class="audio-player-container">
+        <div class="station-title">PulseRock</div>
+        <audio id="audio2" controls>
+            <source src="https://stream-149.zeno.fm/sowvppvyth6uv?zs=oH2jjzd9SSmjdTfD4LMZfg" type="audio/mpeg">
+            Ваш браузер не підтримує аудіо елемент.
+        </audio>
+    </div>
 
-        <!-- PulseBIT Radio Section -->
-        <div class="station-section">
-            <div class="station-title">PulseBIT Radio</div>
-            <audio controls>
-                <source src="https://stream-150.zeno.fm/n1ao5tatuaqvv?zs=T5G65pOyTraWIwtvncvDuQ" type="audio/mpeg">
-                Ваш браузер не підтримує аудіо елемент.
-            </audio>
-        </div>
+    <div class="audio-player-container">
+        <div class="station-title">PulseBIT Radio</div>
+        <audio id="audio3" controls>
+            <source src="https://stream-150.zeno.fm/n1ao5tatuaqvv?zs=T5G65pOyTraWIwtvncvDuQ" type="audio/mpeg">
+            Ваш браузер не підтримує аудіо елемент.
+        </audio>
+    </div>
 
-        <!-- EfirHarmonii Section -->
-        <div class="station-section">
-            <div class="station-title">EfirHarmonii</div>
-            <audio controls>
-                <source src="https://stream.zeno.fm/708nkxeeep9uv" type="audio/mpeg">
-                Ваш браузер не підтримує аудіо елемент.
-            </audio>
-        </div>
+    <div class="audio-player-container">
+        <div class="station-title">EfirHarmonii</div>
+        <audio id="audio4" controls>
+            <source src="https://stream.zeno.fm/708nkxeeep9uv" type="audio/mpeg">
+            Ваш браузер не підтримує аудіо елемент.
+        </audio>
     </div>
 </body>
 </html>
