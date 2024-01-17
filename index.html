@@ -24,33 +24,27 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: start;
+            justify-content: center;
             z-index: 1;
             color: white;
             padding: 10px;
             overflow: auto;
+            text-align: center;
         }
 
         .station-title {
             font-size: 1.8em;
-            margin-bottom: 10px;
-            text-align: center;
-            animation: colorChange 10s infinite;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px #000000;
         }
 
         audio {
-            all: unset;
-            width: 300px;
-            height: 50px;
-            margin: 0;
-            padding: 10px;
-            box-sizing: border-box;
-            display: block;
-            max-width: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            width: 90%; /* Адаптивна ширина, зменшується на мобільних пристроях */
+            min-width: 260px; /* Мінімальна ширина, щоб контроли не стали надто маленькими */
+            margin: 0 auto 20px; /* Центрування та відступи знизу */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
             border-radius: 5px;
-            border: 1px solid #fff;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            overflow: hidden; /* Прибираємо залишкові частини поза межами */
         }
 
         @keyframes colorChange {
@@ -63,10 +57,12 @@
             .station-title {
                 font-size: 1.5em;
             }
-            audio {
-                width: 90%;
-                height: auto;
+            .content {
                 padding: 5px;
+            }
+            audio {
+                width: 95%; /* Ширший на мобільних пристроях */
+                min-width: 0; /* Видалення мінімальної ширини для мобільних пристроїв */
             }
         }
     </style>
@@ -100,7 +96,7 @@
             </audio>
         </div>
 
-        <!-- Четвертий Плеєр Section -->
+        <!-- EfirHarmonii Section -->
         <div class="station-section">
             <div class="station-title">EfirHarmonii</div>
             <audio controls>
